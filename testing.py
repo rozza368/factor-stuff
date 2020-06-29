@@ -27,19 +27,18 @@ def main():
                 print(f"testing {i} {i**2}")
                 # number divides evenly by square
                 if not number % i**2:
-                    number /= i**2
+                    number //= i**2
                     mult *= i
                     available = True
                     break
 
     else:
-        number = root
-        
-
-    print(mult, number, "\n")
+        mult = int(root)
+        number = 1
+       
+    # todo
+    print(f"{mult if mult > 1 else ''}{' root ' if not number == 1 else ''}{number if number > 1 else ''}")
+    print()
 
 while True:
-    try:
-        main()
-    except KeyboardInterrupt:
-        quit()
+    main()
